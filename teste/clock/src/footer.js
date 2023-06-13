@@ -1,11 +1,35 @@
+import React from 'react'
 
-export function Footer() {
+export class Footer extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = props;
+  }
+
+  componentDidMount(){
+    setInterval(
+      () => {this.atualizar()}, 2000
+    )
+  }
+  
+  atualizar() {
+    this.setState(
+      {
+        dados: { ano: this.state.dados.ano + 1 }
+      }
+    )
+  }
+
+  componentWillUnmount(){}
+
+  render(){
     return(
       <footer>
-        <p>Criado por Diego para Recode</p>
+        <p>Criado por Diego para Recode {this.state.dados.ano}</p>
       </footer>
     )
   }
+}
 
 export function Header() {
     return(
@@ -18,22 +42,10 @@ export function Header() {
 export function Section() {
     return(
       <section>
-        <p>lorem ipslum klkkkaadnqdonsad</p>
+        <p>iplum</p>
       </section>
     )
   }
 
-export function Aside() {
-    return(
-      <aside>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-      </aside>
-    )
-  }
 
   //export default Footer

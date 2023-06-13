@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Footer, Header, Aside} from './footer';
+import {Footer, Header, tick} from './footer';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <p>
           lorem
         </p>
-        <Aside/>
+        <tick />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,7 +21,7 @@ function App() {
           testando
         </a>
       </header>
-      <Footer/>
+      <Footer dados={ {ano: 2023} } />
 
     </div>
   );
