@@ -1,10 +1,10 @@
 import './App.css'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 function App() {
   const [name, setName] = useState("Diego")
-  const [number, setNumber] = useState(1)
+  const [number, setNumber] = useState(0)
 
   const mais1 = () => {
     setNumber((prevNumber) => prevNumber + 1)
@@ -15,10 +15,14 @@ function App() {
     menu?.classList.toggle("disable")
   }
 
+  const menu = useRef(null)
+  console.log(menu.current)
 
   return (
     <>
-      <nav className='menu'>
+      <nav 
+      ref = {menu}
+      className='menu'>
         <ul>
           <li>menu</li>
           <li>text</li>
