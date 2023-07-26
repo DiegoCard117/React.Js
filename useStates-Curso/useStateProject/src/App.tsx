@@ -7,21 +7,15 @@ function App() {
   const [number, setNumber] = useState(1)
 
   const mais1 = () => {
-    let menu = document.querySelector(".menu")
-    //setNumber(number + 1)
-    //Previous value - maneira mais correta
     setNumber((prevNumber) => prevNumber + 1)
-    //testes abaixo
-    menu?.classList.toggle("disable")
-    if (document.body.style.backgroundColor != "white") {
-      //document.body.style.backgroundColor = "white"
-      //document.body.style.color = "black"
-      
-    } else {
-      //document.body.style.backgroundColor = "#242424"
-      //document.body.style.color = "white"
-    }
   }
+
+  const menuOpen = () => {
+    const menu = document.querySelector(".menu")
+    menu?.classList.toggle("disable")
+  }
+
+
   return (
     <>
       <nav className='menu'>
@@ -31,6 +25,7 @@ function App() {
           <li>teste</li>
         </ul>
       </nav>
+        <button onClick={menuOpen}>Menu</button>
       <h1>{name}</h1>
       <input 
         type="text" 
