@@ -1,6 +1,6 @@
 import './App.css'
 
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 
 function App() {
   const [name, setName] = useState("Diego")
@@ -15,13 +15,9 @@ function App() {
     menu?.classList.toggle("disable")
   }
 
-  const menu = useRef(null)
-  console.log(menu.current)
-
   return (
     <>
       <nav 
-      ref = {menu}
       className='menu'>
         <ul>
           <li>menu</li>
